@@ -1,0 +1,69 @@
+{
+  "expo": {
+    "name": "Hearth",
+    "slug": "hearth",
+    "scheme": "hearth",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "backgroundColor": "#07080F",
+    "ios": {
+      "bundleIdentifier": "com.arash.hearth",
+      "supportsTablet": false,
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
+    },
+    "android": {
+      "package": "com.arash.hearth",
+      "adaptiveIcon": {
+        "backgroundColor": "#07080F",
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "monochromeImage": "./assets/android-icon-monochrome.png"
+      },
+      "predictiveBackGestureEnabled": false
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-font",
+      [
+        "expo-splash-screen",
+        {
+          "image": "./assets/splash-icon.png",
+          "imageWidth": 160,
+          "backgroundColor": "#07080F"
+        }
+      ],
+      [
+        "@react-native-google-signin/google-signin",
+        {
+          "iosUrlScheme": "com.googleusercontent.apps.623992148318-cl9bfqeepatd9fram9p8jgaqfslqo6v8"
+        }
+      ],
+      "expo-build-properties",
+      [
+        "expo-speech-recognition",
+        {
+          "microphonePermission": "Hearth uses the microphone so you can add expenses, tasks and reminders by voice.",
+          "speechRecognitionPermission": "Hearth turns your voice into text on your iPhone to create entries."
+        }
+      ],
+      "expo-secure-store",
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "Hearth lets you pick photos of documents to save to your Google Drive.",
+          "cameraPermission": "Hearth uses the camera to scan documents and receipts into your Google Drive."
+        }
+      ]
+    ],
+    "experiments": {
+      "typedRoutes": true
+    }
+  }
+}

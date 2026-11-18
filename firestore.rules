@@ -1,0 +1,19 @@
+rules_version = '2';
+
+// Hearth — only the two family Google accounts can read or write anything.
+// Template only: the live rules (with the real addresses) are set in the Firebase console.
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isFamily() {
+      return request.auth != null
+        && request.auth.token.email_verified == true
+        && request.auth.token.email in [
+          'YOUR_EMAIL@gmail.com',
+          'PARTNER_EMAIL@gmail.com'
+        ];
+    }
+    match /{document=**} {
+      allow read, write: if isFamily();
+    }
+  }
+}
